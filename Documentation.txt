@@ -1,0 +1,5 @@
+1 . install react project
+2 . install tailwind css
+3 . install daisyui
+4 . install react router
+5 . react router setup
