@@ -4,7 +4,7 @@ import './Footer.css'
 const Footer = () => {
   return (
     <div >
-      <footer className="footer sm:footer-horizontal bg-amber-100 text-base-content p-10">
+      <footer className="footer sm:footer-horizontal bg-[#23BE0A]/40 text-base-content p-10">
         <aside>
           <h1 className='text-4xl pacifico font-black '>BOOK CAFE</h1>
           <p>

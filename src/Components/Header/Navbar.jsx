@@ -4,7 +4,7 @@ import './Navbar.css'
 
 const Navbar = () => {
   return (
-    <div className='md:mx-24 sm:mx-6 mx-3'>
+    <div className='md:px-24 fixed top-0 right-0 left-0 sm:px-6 px-3 border-b border-slate-300 '>
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
@@ -13,7 +13,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex="-1"
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+              className="menu menu-sm work-sans dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
               <li>
                 <NavLink>Home</NavLink>
               </li>
@@ -30,7 +30,7 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <NavLink className={({ isActive, isPending }) =>
+              <NavLink className={  ({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "active text-[#23BE0A] border border-[#23BE0A] mx-2" : ""
               }>Home</NavLink>
             </li>
