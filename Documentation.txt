@@ -8,4 +8,10 @@
 8 . Getting data using the 1 . props 2 . Context Api
 9 . Installation of React Icon
 10 . Using of Dynamic Routing
-11 . 
+11 . detailed page
+12 . add to read and add ot wishlist 
+12 .1. store with id
+12 .2. where to store
+12 .3. array or collection
+12 .4. if book already exist then show a alert
+12 .5. if book not exist then push in the collection or array 

@@ -3,6 +3,7 @@ import '../BookDetails/BookDetails.css'
 import { useLoaderData, useParams } from 'react-router';
 import { FaReadme } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
+import { addToLocalStorage } from '../../Utility/AddToLocalStorage';
 
 
 
@@ -13,6 +14,11 @@ const BookDetails = () => {
   const findData = data.find(book => book.bookId === bookId)
 
   const { bookName, author,review, image, rating, category, publisher, yearOfPublishing, tags,totalPages } = findData
+
+
+  const handleAddToLocalStorage =(id)=>{
+    addToLocalStorage(id);
+  }
   
   return (
     <div className='work-sans flex flex-row gap-10 my-10  md:mx-24 sm:mx-6 mx-3 px-5'>
@@ -47,7 +53,7 @@ const BookDetails = () => {
           </div>
 
           <div className='flex my-4 gap-5'>
-            <button className='btn'>Read <FaReadme />
+            <button onClick={()=>handleAddToLocalStorage(id)} className='btn'>Read <FaReadme />
 </button>
             <button className='btn bg-[#50B1C9]'>Wishlist <FaHeart />
 </button>
