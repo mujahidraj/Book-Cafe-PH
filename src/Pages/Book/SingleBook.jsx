@@ -34,7 +34,7 @@ const SingleBook = ({ booksItem }) => {
         </div>
         <div className='flex px-4 border-t border-slate-300 py-2  gap-5 mt-5'>
           {
-            tags.map(tagItems => <p className='border work-sans text-sm text-[#585858cc] px-2 rounded-sm border-slate-300'>{tagItems}</p>)
+            tags.map((tagItems ,index) => <p className='border work-sans text-sm text-[#585858cc] px-2 rounded-sm border-slate-300' key={index}>{tagItems}</p>)
           }
         </div>
       </div>
