@@ -4,7 +4,7 @@ import './Navbar.css'
 
 const Navbar = () => {
   return (
-    <div className='md:px-24 fixed top-0 right-0 left-0 sm:px-6 px-3 border-b border-slate-300 '>
+    <div className='md:px-24  sm:px-6 px-3 border-b border-slate-300 '>
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
