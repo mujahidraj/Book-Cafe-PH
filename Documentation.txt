@@ -4,3 +4,8 @@
 4 . install react router
 5 . react router setup
 6 . git push
+7 . data loading : 1 . useEffect , 2 . Normal Promise fetch , 3 . Using the loader
+8 . Getting data using the 1 . props 2 . Context Api
+9 . Installation of React Icon
+10 . Using of Dynamic Routing
+11 . 
