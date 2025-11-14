@@ -42,7 +42,7 @@ const Navbar = () => {
             <li>
               <NavLink to={`/pagesview`} className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "active text-[#23BE0A] border border-[#23BE0A] mx-2 work-sans" : "font-medium work-sans "
-              }>Pages to Read</NavLink>
+              }>Read Data</NavLink>
             </li>
           </ul>
         </div>

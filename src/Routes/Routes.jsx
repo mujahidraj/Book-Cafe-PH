@@ -31,7 +31,7 @@ export const router = createBrowserRouter([
       },
       {
         path : '/pagesview',
-        
+        loader:()=>fetch("booksData.json"),
         Component : ReadPages
       }
     ]
