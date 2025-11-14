@@ -31,17 +31,17 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">
             <li>
               <NavLink className={  ({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "active text-[#23BE0A] border border-[#23BE0A] mx-2" : ""
+                isPending ? "pending" : isActive ? "active text-[#23BE0A] border border-[#23BE0A] mx-2 work-sans" : "font-medium work-sans "
               }>Home</NavLink>
             </li>
             <li>
-              <NavLink  className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "active text-[#23BE0A] border border-[#23BE0A] mx-2" : ""
+              <NavLink to={`/listview`} className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active text-[#23BE0A] border border-[#23BE0A] mx-2 work-sans" : "font-medium work-sans "
               }>Listed Books</NavLink>
             </li>
             <li>
-              <NavLink  className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "active text-[#23BE0A] border border-[#23BE0A] mx-2" : ""
+              <NavLink to={`/pagesview`} className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active text-[#23BE0A] border border-[#23BE0A] mx-2 work-sans" : "font-medium work-sans "
               }>Pages to Read</NavLink>
             </li>
           </ul>
