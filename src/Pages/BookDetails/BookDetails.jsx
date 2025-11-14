@@ -8,6 +8,7 @@ import { addToWishListed } from '../../Utility/WishListToLocalStorage';
 
 
 
+
 const BookDetails = () => {
   const { id } = useParams();
   const bookId = parseInt(id)
@@ -19,10 +20,12 @@ const BookDetails = () => {
 
   const handleAddToLocalStorage = (id) => {
     addToLocalStorage(id);
+    
   }
 
   const handleAddToWishListStorage = (id) => {
     addToWishListed(id)
+
   }
 
   return (

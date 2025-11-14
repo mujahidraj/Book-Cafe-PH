@@ -1,3 +1,8 @@
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
+
 const wishlistedBook =()=>{
   const getWishListedBooks = localStorage.getItem("wishlist")
 
@@ -13,12 +18,24 @@ const wishlistedBook =()=>{
 const addToWishListed =(id)=>{
   const storedWishedBooks = wishlistedBook();
   if(storedWishedBooks.includes(id)){
-    alert("This books is already in the Wishlist.")
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "This book is already added to the list.",
+      
+    });
   }
   else {
     storedWishedBooks.push(id)
     const data = JSON.stringify(storedWishedBooks);
     localStorage.setItem("wishlist", data)
+
+    // sweetAlert
+        Swal.fire({
+              title: "Congratulation!",
+              text: "The Book is added to the wishlist.",
+              icon: "success"
+            });
   }
 }
 

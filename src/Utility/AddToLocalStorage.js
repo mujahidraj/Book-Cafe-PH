@@ -1,3 +1,8 @@
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
+
 const getStoredBook =()=>{
   const storedBookSTR = localStorage.getItem("readlist");
 
@@ -14,12 +19,24 @@ const addToLocalStorage = (id) => {
   const storeBookData = getStoredBook();
 
   if(storeBookData.includes(id)){
-    alert ("This book is already exist in the list.")
+    Swal.fire({
+  icon: "error",
+  title: "Oops...",
+  text: "This book is already added to the list.",
+  
+});
   }
   else{
     storeBookData.push(id)
     const data = JSON.stringify(storeBookData);
     localStorage.setItem("readlist", data)
+
+    // sweetAlert
+    Swal.fire({
+          title: "Good job!",
+          text: "Congratulation! you have finished the book.",
+          icon: "success"
+        });
   }
 }
 
