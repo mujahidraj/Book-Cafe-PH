@@ -16,7 +16,7 @@ const ListView = () => {
   useEffect(() => {
     const storedBookData = getStoredBook();
     const convertedStoredBook = storedBookData.map(id => parseInt(id))
-    const myMarkedRead = bookData.filter(book => convertedStoredBook.includes(book.bookId));
+    const myMarkedRead = bookData.filter(book =>convertedStoredBook.includes(book.bookId));
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setMarkedRead(myMarkedRead)
 
