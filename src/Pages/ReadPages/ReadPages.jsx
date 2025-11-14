@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getStoredBook } from '../../Utility/AddToLocalStorage';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, Legend, Cell } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, Legend, Cell, ResponsiveContainer } from 'recharts';
 import { useLoaderData } from 'react-router';
 
 const colorData = [
@@ -26,49 +26,62 @@ const ReadPages = () => {
     const convertedStoredBook = storedBookData.map(id => parseInt(id));
 
     const myMarkedRead = bookData.filter(book => convertedStoredBook.includes(book.bookId));
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setMarkedRead(myMarkedRead);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMarkedRead(myMarkedRead);
 
   }, [bookData]);
-  
+
 
   return (
     <div>
-      
-    
-      <BarChart 
-        height={500} 
-        width={1200} 
-        data={markedRead} 
-        margin={{
-          top: 20,
-          right: 20,
-          bottom: 20,
-          left: 20,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        
-        
-        <XAxis dataKey="bookName" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        
-       
-        <Bar dataKey="totalPages">
-  {
- 
-    markedRead.map((entry, index) => (
-      <Cell 
-        key={`cell-${index}`} 
-        fill={colorData[index % colorData.length].fill} 
-      />
-    ))
-  }
-</Bar>
 
-      </BarChart>
+        <div>
+          <h3>
+            {
+              markedRead.map(items=>{
+                let sum=0;
+                sum+=items.totalPages;
+                <p>{sum}</p>
+              })
+            }
+          </h3>
+        </div>
+ 
+        <BarChart
+          height={500}
+          width={`100%`}
+          data={markedRead}
+          margin={{
+            top: 20,
+            right: 20,
+            bottom: 20,
+            left: 20,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+
+
+          <XAxis dataKey="bookName" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+
+
+          <Bar dataKey="totalPages">
+            {
+
+              markedRead.map((entry, index) => (
+                <Cell
+                  key={`cell-${index}`}
+                  fill={colorData[index % colorData.length].fill}
+                />
+              ))
+            }
+          </Bar>
+
+        </BarChart>
+
+
     </div>
   );
 };

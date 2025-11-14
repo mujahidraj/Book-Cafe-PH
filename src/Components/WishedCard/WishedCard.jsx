@@ -5,10 +5,11 @@ import { IoPeopleOutline } from "react-icons/io5";
 import { MdOutlineFindInPage } from "react-icons/md";
 import { IoMdPerson } from "react-icons/io";
 import { LiaHashtagSolid } from "react-icons/lia";
+import { Link } from 'react-router';
 const WishedCard = ({wishedItems}) => {
 
 
-   const { bookName, author, image, rating, category, publisher, yearOfPublishing, tags, totalPages } = wishedItems
+   const {bookId, bookName, author, image, rating, category, publisher, yearOfPublishing, tags, totalPages } = wishedItems
    
      return (
        <div>
@@ -43,7 +44,9 @@ const WishedCard = ({wishedItems}) => {
              <div className='flex sm:flex-row flex-col sm:gap-8 gap-3 items-center'>
                <h3 className='text-sky-500 py-2 px-4 rounded-full bg-sky-200 font-medium work-sans'>Category : <span className='text-sky-500 font-medium' >{category}</span></h3>
                <h3 className='text-amber-500 py-2 px-4 rounded-full bg-amber-100 font-medium my-2 work-sans'>Rating : <span className='text-amber-500 font-medium' >{rating}</span></h3>
+               <Link to={`/bookDetails/${bookId}`}>
                <button className='btn bg-[#23BE0A] text-white rounded-full'>View Details</button>
+               </Link>
              </div>
            </div>
          </div>

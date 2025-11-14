@@ -15,13 +15,13 @@ const Navbar = () => {
               tabIndex="-1"
               className="menu menu-sm work-sans dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
               <li>
-                <NavLink>Home</NavLink>
+                <NavLink to='/'>Home</NavLink>
               </li>
               <li>
-                <NavLink>Listed Books</NavLink>
+                <NavLink to={`/listview`}>Listed Books</NavLink>
               </li>
               <li>
-                <NavLink>Pages to Read</NavLink>
+                <NavLink to={`/pagesview`}>Pages to Read</NavLink>
               </li>
             </ul>
           </div>
@@ -48,7 +48,6 @@ const Navbar = () => {
         </div>
         <div className="navbar-end gap-2">
           <NavLink className="btn bg-[#23BE0A] rounded-lg text-white">Sign In</NavLink>
-          <NavLink className="btn bg-[#59C6D2] rounded-lg text-white">Sign Up</NavLink>
         </div>
       </div>
     </div>
