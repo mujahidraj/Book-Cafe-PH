@@ -26,7 +26,7 @@ const BookDetails = () => {
   }
 
   return (
-    <div className='work-sans flex flex-row gap-10 my-10  md:mx-24 sm:mx-6 mx-3 px-5'>
+    <div className='work-sans flex sm:flex-row flex-col gap-10 my-10  md:mx-24 sm:mx-6 mx-3 px-5'>
       <img src={image} className='w-5/12 ' alt="" />
       <div>
         <h3 className='text-4xl playfair-display font-bold mb-3'>{bookName}</h3>
