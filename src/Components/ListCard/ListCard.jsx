@@ -5,6 +5,7 @@ import { IoPeopleOutline } from "react-icons/io5";
 import { MdOutlineFindInPage } from "react-icons/md";
 import { IoMdPerson } from "react-icons/io";
 import { LiaHashtagSolid } from "react-icons/lia";
+import { Link } from 'react-router';
 
 
 
@@ -12,11 +13,11 @@ import { LiaHashtagSolid } from "react-icons/lia";
 
 const ListCard = ({ readItems }) => {
 
-  const { bookName, author, image, rating, category, publisher, yearOfPublishing, tags, totalPages } = readItems
+  const { bookId,bookName, author, image, rating, category, publisher, yearOfPublishing, tags, totalPages } = readItems
 
   return (
     <div>
-      <div className='flex flex-row border-b pb-10 border-slate-400 gap-10'>
+      <div className='flex  md:flex-row items-center sm:text-left text-center flex-col border-b pb-10 border-slate-400 gap-10'>
         <img src={image} className='w-40' alt="" />
         <div>
           <h2 className='playfair-display text-2xl font-bold'>{bookName}</h2>
@@ -24,7 +25,7 @@ const ListCard = ({ readItems }) => {
             Author : <span className='text-[#23BE0A] font-medium ' >{author}</span></p>
 
 
-          <div className='flex gap-10'>
+          <div className='flex sm:flex-row flex-col sm:gap-10 gap-3'>
             <div className='flex flex-row gap-5'><span className='font-bold text-sm flex  gap-2 items-center'><LiaHashtagSolid />
               Tag :</span>
               {
@@ -44,10 +45,12 @@ const ListCard = ({ readItems }) => {
           </div>
 
 
-          <div className='flex flex-row gap-8 items-center'>
+          <div className='flex sm:flex-row flex-col sm:gap-8 gap-3 items-center'>
             <h3 className='text-sky-500 py-2 px-4 rounded-full bg-sky-200 font-medium work-sans'>Category : <span className='text-sky-500 font-medium' >{category}</span></h3>
             <h3 className='text-amber-500 py-2 px-4 rounded-full bg-amber-100 font-medium my-2 work-sans'>Rating : <span className='text-amber-500 font-medium' >{rating}</span></h3>
+           <Link to={`/bookDetails/${bookId}`}>
             <button className='btn bg-[#23BE0A] text-white rounded-full'>View Details</button>
+            </Link>
           </div>
         </div>
       </div>
