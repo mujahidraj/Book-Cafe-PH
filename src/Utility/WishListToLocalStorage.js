@@ -22,4 +22,4 @@ const addToWishListed =(id)=>{
   }
 }
 
-export {addToWishListed} ;
+export {addToWishListed ,wishlistedBook} ;

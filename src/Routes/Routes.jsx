@@ -26,10 +26,12 @@ export const router = createBrowserRouter([
       },
       {
         path : '/listview',
+        loader:()=>fetch("booksData.json"),
         Component : ListView
       },
       {
         path : '/pagesview',
+        
         Component : ReadPages
       }
     ]
